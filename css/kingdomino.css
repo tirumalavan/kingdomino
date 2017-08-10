@@ -110,7 +110,7 @@ input{
 		border-right: 0px;
 	}
 	#addPlayer{
-		top: 0px;
+		top: 0px !important;
 	}
 }
 @media screen and (max-width: 768px){
