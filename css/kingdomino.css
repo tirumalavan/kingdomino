@@ -109,6 +109,9 @@ input{
 	#player1, #player3{
 		border-right: 0px;
 	}
+	#addPlayer{
+		top: 0px;
+	}
 }
 @media screen and (max-width: 768px){
 	header{
