@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html ng-app="kingdomino">
+	<head>
+		<title>Kingdomino</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+		<script type="text/javascript" src="js/angular.js"></script>
+		<script type="text/javascript" src="js/kingdomino.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.5.css">
+		<link rel="stylesheet" type="text/css" href="css/kingdomino.css">
+	</head>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	});
+	</script>
+	<body ng-controller="scoreCalculator">
+		<div id="main" class="container-fluid">
+			<header class="col-sm-12"></header>
+			<div class="row col-md-12" id="row1">
+				<div id="player1" class="col-md-6 ">
+					<table>
+						<tr>
+						<th colspan="4">Player 1</th>
+						</tr>
+						<tr>
+							<th></th>
+							<th>Tiles</th>
+							<th id="crowns"></th>
+							<th id="total">Total</th>
+						</tr>
+						<tr>
+							<td id="wheat"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="wheatTiles[0]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="wheatCrowns[0]"/>
+							</td>
+							<td id="total">
+								{{wheatScore[0] = (wheatTiles[0] * wheatCrowns[0])}}
+							</td>
+						</tr>
+						<tr>
+							<td id="grass"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="grassTiles[0]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="grassCrowns[0]"/>
+							</td>
+							<td id="total">
+								{{grassScore[0] = (grassTiles[0] * grassCrowns[0])}}
+							</td>
+						</tr>
+						<tr>
+							<td id="forest"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="forestTiles[0]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="forestCrowns[0]"/>
+							</td>
+							<td id="total">
+								{{forestScore[0] = (forestTiles[0] * forestCrowns[0])}}
+							</td>
+						</tr>
+						<tr>
+							<td id="mines"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="mineTiles[0]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="mineCrowns[0]"/>
+							</td>
+							<td id="total">
+								{{mineScore[0] = (mineTiles[0] * mineCrowns[0])}}
+							</td>
+						</tr>
+						<tr>
+							<td id="water"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="waterTiles[0]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="waterCrowns[0]"/>
+							</td>
+							<td id="total">
+								{{waterScore[0] = (waterTiles[0] * waterCrowns[0])}}
+							</td>
+						</tr>
+						<tr>
+							<td id="desert"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="desertTiles[0]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="desertCrowns[0]"/>
+							</td>
+							<td id="total">
+								{{desertScore[0] = (desertTiles[0] * desertCrowns[0])}}
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4" id="totalFinalScore">{{totalScore[0] = wheatScore[0] + grassScore[0] + forestScore[0] + mineScore[0] + waterScore[0] + desertScore[0]}}
+						</tr>
+					</table>
+				</div><!--end of player1-->
+				<div id="player2" class="col-md-6">
+					<table>
+						<tr>
+						<th colspan="4">Player 2</th>
+						</tr>
+						<tr>
+							<th></th>
+							<th>Tiles</th>
+							<th id='crowns'></th>
+							<th id="total">Total</th>
+						</tr>
+						<tr>
+							<td id="wheat"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="wheatTiles[1]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="wheatCrowns[1]"/>
+							</td>
+							<td id="total">
+								{{wheatScore[1] = (wheatTiles[1] * wheatCrowns[1])}}
+							</td>
+						</tr>
+						<tr>
+							<td id="grass"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="grassTiles[1]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="grassCrowns[1]"/>
+							</td>
+							<td id="total">
+								{{grassScore[1] = (grassTiles[1] * grassCrowns[1])}}
+							</td>
+						</tr>
+						<tr>
+							<td id="forest"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="forestTiles[1]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="forestCrowns[1]"/>
+							</td>
+							<td id="total">
+								{{forestScore[1] = (forestTiles[1] * forestCrowns[1])}}
+							</td>
+						</tr>
+						<tr>
+							<td id="mines"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="mineTiles[1]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="mineCrowns[1]"/>
+							</td>
+							<td id="total">
+								{{mineScore[1] = (mineTiles[1] * mineCrowns[1])}}
+							</td>
+						</tr>
+						<tr>
+							<td id="water"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="waterTiles[1]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="waterCrowns[1]"/>
+							</td>
+							<td id="total">
+								{{waterScore[1] = (waterTiles[1] * waterCrowns[1])}}
+							</td>
+						</tr>
+						<tr>
+							<td id="desert"></td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="desertTiles[1]"/>
+							</td>
+							<td>
+								<input type="number" placeholder="0" maxlength="2" ng-model="desertCrowns[1]"/>
+							</td>
+							<td id="total">
+								{{desertScore[1] = (desertTiles[1] * desertCrowns[1])}}
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4" id="totalFinalScore">{{totalScore[1] = wheatScore[1] + grassScore[1] + forestScore[1] + mineScore[1] + waterScore[1] + desertScore[1]}}
+						</tr>
+					</table>
+				</div><!--end of player2-->
+			</div><!--end of row 1-->
+			<div class="row col-md-12" id="row2">
+				<div id="player3" class="carousel slide col-md-6" data-interval="false">
+					<div class="carousel-inner">
+						<div class="item active">
+							<a href="#player3" id="removePlayer" data-slide="next">
+								<span class="glyphicon glyphicon-minus-sign"></span>
+								<span>Remove Player</span>
+							</a>
+							<table width="100%">
+								<tr>
+									<th colspan="4">Player 3</th>
+								</tr>
+								<tr>
+									<th></th>
+									<th>Tiles</th>
+									<th id="crowns"></th>
+									<th id="total">Total</th>
+								</tr>
+								<tr>
+									<td id="wheat"></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="wheatTiles[2]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="wheatCrowns[2]"/>
+									</td>
+									<td id="total">
+										{{wheatScore[2] = (wheatTiles[2] * wheatCrowns[2])}}
+									</td>
+								</tr>
+								<tr>
+									<td id="grass"></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="grassTiles[2]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="grassCrowns[2]"/>
+									</td>
+									<td id="total">
+										{{grassScore[2] = (grassTiles[2] * grassCrowns[2])}}
+									</td>
+								</tr>
+								<tr>
+									<td id="forest"></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="forestTiles[2]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="forestCrowns[2]"/>
+									</td>
+									<td id="total">
+										{{forestScore[2] = (forestTiles[2] * forestCrowns[2])}}
+									</td>
+								</tr>
+								<tr>
+									<td id="mines"></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="mineTiles[2]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="mineCrowns[2]"/>
+									</td>
+									<td id="total">
+										{{mineScore[2] = (mineTiles[2] * mineCrowns[2])}}
+									</td>
+								</tr>
+								<tr>
+									<td id="water"></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="waterTiles[2]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="waterCrowns[2]"/>
+									</td>
+									<td id="total">
+										{{waterScore[2] = (waterTiles[2] * waterCrowns[2])}}
+									</td>
+								</tr>
+								<tr>
+									<td id="desert"></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="desertTiles[2]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="desertCrowns[2]"/>
+									</td>
+									<td id="total">
+										{{desertScore[2] = (desertTiles[2] * desertCrowns[2])}}
+									</td>
+								</tr>
+								<tr>
+									<td colspan="4" id="totalFinalScore">{{totalScore[2] = wheatScore[2] + grassScore[2] + forestScore[2] + mineScore[2] + waterScore[2] + desertScore[2]}}
+								</tr>
+							</table>
+						</div><!--end of active player3-->
+						<div class="item" id="addButton">
+							<a href="#player3" id="addPlayer" data-slide="prev">
+								<span class="glyphicon glyphicon-plus-sign" id="addPlayer3"></span>
+								<span>Add Player</span>
+							</a>
+						</div><!--end of "add player" div-->
+					</div><!--end of carousel-inner-->
+				</div><!--end of player3-->
+				<div id="player4" class="carousel slide col-md-6" data-interval="false">
+					<div class="carousel-inner">
+						<div class="item active">
+							<a href="#player4" id="removePlayer" data-slide="next">
+								<span class="glyphicon glyphicon-minus-sign" id="removePlayer4"></span>
+								<span>Remove Player</span>
+							</a>
+							<table width="100%">
+								<tr>
+									<th colspan="4">Player 4</th>
+								</tr>
+								<tr>
+									<th></th>
+									<th>Tiles</th>
+									<th id="crowns"></th>
+									<th id="total">Total</th>
+								</tr>
+								<tr>
+									<td id="wheat"></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="wheatTiles[3]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="wheatCrowns[3]"/>
+									</td>
+									<td id="total">
+										{{wheatScore[3] = (wheatTiles[3] * wheatCrowns[3])}}
+									</td>
+								</tr>
+								<tr>
+									<td id="grass"></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="grassTiles[3]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="grassCrowns[3]"/>
+									</td>
+									<td id="total">
+										{{grassScore[3] = (grassTiles[3] * grassCrowns[3])}}
+									</td>
+								</tr>
+								<tr>
+									<td id="forest"></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="forestTiles[3]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="forestCrowns[3]"/>
+									</td>
+									<td id="total">
+										{{forestScore[3] = (forestTiles[3] * forestCrowns[3])}}
+									</td>
+								</tr>
+								<tr>
+									<td id="mines"></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="mineTiles[3]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="mineCrowns[3]"/>
+									</td>
+									<td id="total">
+										{{mineScore[3] = (mineTiles[3] * mineCrowns[3])}}
+									</td>
+								</tr>
+								<tr>
+									<td id='water'></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="waterTiles[3]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="waterCrowns[3]"/>
+									</td>
+									<td id="total">
+										{{waterScore[3] = (waterTiles[3] * waterCrowns[3])}}
+									</td>
+								</tr>
+								<tr>
+									<td id="desert"></td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="desertTiles[3]"/>
+									</td>
+									<td>
+										<input type="number" placeholder="0" maxlength="2" ng-model="desertCrowns[3]"/>
+									</td>
+									<td id="total">
+										{{desertScore[3] = (desertTiles[3] * desertCrowns[3])}}
+									</td>
+								</tr>
+								<tr>
+									<td colspan="4" id="totalFinalScore">{{totalScore[3] = wheatScore[3] + grassScore[3] + forestScore[3] + mineScore[3] + waterScore[3] + desertScore[3]}}
+								</tr>
+							</table>
+						</div><!--end of active player4-->
+						<div class="item" id="addButton">
+							<a href="#player4" id="addPlayer" data-slide="prev">
+								<span class="glyphicon glyphicon-plus-sign" id="addPlayer3"></span>
+								<span>Add Player</span>
+							</a>
+						</div><!--end of "add player" div-->
+					</div><!--end of carousel-inner-->
+				</div><!--end of player4-->
+			</div><!--end of row2-->
+		</div><!--end of container-fluid-->
+	</body>
+</html>
