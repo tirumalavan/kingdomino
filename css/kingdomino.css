@@ -49,13 +49,13 @@ table tr{
 #removePlayer{
 	float:right;
 	position: relative;
-	top:20px;
+	top:45px;
 	font-weight: 800;
 	color: #525252;
 }
 #addPlayer{
 	position: relative;
-	top:20px;
+	top:45px;
 	font-weight: 800;
 	color: #525252;
 }
@@ -112,12 +112,6 @@ input{
 @media screen and (max-width: 768px){
 	header{
 		height: 145px;
-	}
-	#removePlayer{
-		top:45px;
-	}
-	#addPlayer{
-		top:45px;
 	}
 }
 @media screen and (max-width: 540px){
