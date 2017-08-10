@@ -45,6 +45,7 @@ table tr{
 }
 #crowns{
 	background:url("../images/kingdomino_crown.png") no-repeat left center;
+	background-size: 40px 40px;
 }
 #removePlayer{
 	float:right;
