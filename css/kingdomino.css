@@ -1,0 +1,126 @@
+header{
+	background-image: url("../images/kingdomino_header_new.png");
+	background-position: center;
+	height: 300px;
+	background-size: cover;
+}
+#total{
+	text-align: right;
+}
+#row1{
+	position: relative;
+	top:30px;
+}
+#row2{
+	position: relative;
+	top:30px;
+}
+table{
+	width: 100%;
+}
+table tr{
+	height: 60px;
+}
+#player1, #player3{
+	border-right: 1px solid black;
+}
+#main{
+	background: url("../images/kingdomino_background.png") no-repeat center center fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	overflow:auto;
+	font-family: 'Julius Sans One', sans-serif;
+}
+#main::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+#row2{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+#crowns{
+	background:url("../images/kingdomino_crown.png") no-repeat left center;
+}
+#removePlayer{
+	float:right;
+	position: relative;
+	top:20px;
+	font-weight: 800;
+	color: #525252;
+}
+#addPlayer{
+	position: relative;
+	top:20px;
+	font-weight: 800;
+	color: #525252;
+}
+#addButton{
+	height: 40px;
+}
+#totalFinalScore{
+	text-align: right;
+	font-size: 2em;
+}
+input{
+	width: 100px;
+}
+#wheat{
+	background: url("../images/kingdomino_wheat.png") no-repeat left center;
+	background-size: 40px 40px;
+	width:100px;
+}
+#grass{
+	background: url("../images/kingdomino_grass.png") no-repeat left center;
+	background-size: 40px 40px;
+	width:100px;
+}
+#water{
+	background: url("../images/kingdomino_water.png") no-repeat left center;
+	background-size: 40px 40px;
+	width:100px;
+}
+#desert{
+	background: url("../images/kingdomino_desert.png") no-repeat left center;
+	background-size: 40px 40px;
+	width:100px;
+}
+#mines{
+	background: url("../images/kingdomino_mines.png") no-repeat left center;
+	background-size: 40px 40px;
+	width:100px;
+}
+#forest{
+	background: url("../images/kingdomino_forest.png") no-repeat left center;
+	background-size: 40px 40px;
+	width:100px;
+}
+
+@media screen and (max-width: 986px){
+	#player1, #player3{
+		border-right: 0px;
+	}
+}
+@media screen and (max-width: 768px){
+	header{
+		height: 165px;
+	}
+}
+@media screen and (max-width: 540px){
+	header{
+		height: 100px;
+	}
+}
+@media screen and (max-width: 375px){
+	input{
+		width:60px;
+	}
+
+}
+@font-face{
+	font-family: 'Julius Sans One', sans-serif;
+	src: url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+}
