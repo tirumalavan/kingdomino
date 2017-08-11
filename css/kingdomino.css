@@ -1,7 +1,6 @@
 header{
 	background-image: url("../images/kingdomino_header_new.png");
 	background-position: center;
-	position: static;
 	height: 300px;
 	background-size: cover;
 }
